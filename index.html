@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myBMI - BMI Calculator</title>
+
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        .main-container{
+            padding-top: 15px;
+            text-align: center;
+            width: 45%;
+            height: 600px;
+            background-color: aliceblue;
+            margin: 20px 150px ;
+            box-shadow: 1px 1px 5px 0.1px;
+            border-radius: 120px;
+        }
+
+        .checkbutton{
+            background-color: rgb(16, 153, 16);
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 0px;
+            color: white;
+            width: 60%;
+        }
+
+     
+        button:hover {
+            background-color: #00783c;
+        }
+        #result {
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        #bmiScale {
+            margin-top: 6px;
+            width: 100%;
+            height: 180px;
+        }
+  
+
+        .inputWeight{
+            margin: auto;
+        }
+
+        #warning{
+            margin-top: 15px;
+            margin-bottom: 0px;
+        }
+        .image1{
+            width: 18%;
+            position: absolute;
+            top: 13%;
+            left: 3%;
+            opacity: 0.9;
+            
+        }
+        span{
+            color: rgb(255, 204, 0);
+        }
+        nav h3{
+            color: green;
+            margin-right: 15px;
+            margin-top: -43px;
+            float: right;
+        }
+      
+        .image2{
+            width: 10%;
+        }
+        .container1{
+            display: flex;
+            margin: 10px 30px;
+        }
+        .image3{
+            position: absolute;
+            width: 40%;
+            top: 4%;
+            right: 4%;
+        }
+
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container1">
+    <h4>my<span>BMI</span></h4>
+    <nav>
+        <img src="./images/logo.png" alt="" class="image2">
+    </nav>
+</div>
+    <div class="main-container">
+        <h2 class="mt-4 text-success">BMI Calculator</h2>
+        <p id="warning"></p>
+        <label for="gender" class="fw-bold">Select Gender : </label>
+
+        <input type="radio" value="Male" name="gender" id="male" class="my-4">
+        <label for="male">Male</label>
+
+        <input type="radio" value="Female" name="gender" id="female" >
+        <label for="Female">Female</label><br>
+
+
+
+        <label for="" class="fw-bold mt-3">Weight :</label>
+        <input type="number" name="" id="weight" placeholder="Enter Your Weight" class="inputWeight my-2 form-control w-50 text-center mb-3" required>
+        <label for="" class="fw-bold">Height :</label>
+        <input type="number" name="" id="height" placeholder="Enter Your Height" class="inputWeight my-2 form-control w-50 text-center" required><br>
+
+        <button class="checkbutton" onclick="checkBMI()">Check BMI</button>
+        <div id="result"></div>
+        <div id="category"></div>
+
+
+        <svg id="bmiScale" viewBox="0 0 400 200">
+            <rect x="0" y="15" width="100" height="25" fill="#87CEFA" />
+            <rect x="100" y="15" width="100" height="25" fill="#90EE90" />
+            <rect x="200" y="15" width="100" height="25" fill="#FFD700" />
+            <rect x="300" y="15" width="100" height="25" fill="red" />
+            <text x="50" y="60" text-anchor="middle" font-size="12">Underweight</text>
+            <text x="150" y="60" text-anchor="middle" font-size="12">Normal</text>
+            <text x="250" y="60" text-anchor="middle" font-size="12">Overweight</text>
+            <text x="350" y="60" text-anchor="middle" font-size="12">Obese</text>
+            <polygon id="arrow" points="0,40 2,40  2,0  0,0 " fill="black" transform="translate(0, 7)" />
+        </svg>
+    </div>
+
+    <img src="./images/running-8050066_1920-Photoroom.png" alt="" class="image3">
+
+    <script src="script.js"></script>
+</body>
+</html>

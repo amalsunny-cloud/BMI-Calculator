@@ -10,7 +10,7 @@ function checkBMI() {
     
     // Check if gender is selected
     if (!document.querySelector('input[name="gender"]:checked')) {
-        warning.textContent = "Please select the gender";
+        warning.textContent = "Please select the gender!";
         warning.style.cssText = "color:red;font-weight:bold";
         result.textContent = "";
         category.textContent = "";
